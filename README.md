@@ -11,7 +11,7 @@ My personal Codex plugin marketplace
 Register this marketplace with Codex:
 
 ```bash
-codex plugin marketplace add kia https://github.com/KiaArmani/codex-marketplace
+codex plugin marketplace add https://github.com/KiaArmani/codex-marketplace
 codex plugin marketplace list
 ```
 
