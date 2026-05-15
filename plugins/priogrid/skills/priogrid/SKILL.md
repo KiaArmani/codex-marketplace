@@ -18,6 +18,27 @@ priogrid is a Todoist-backed weekly planning assistant. All interaction happens 
 
 ## Common Commands
 
+Priogrid also exposes one slash-command skill per CLI command. In an installed plugin, prefer the namespaced slash commands when available:
+
+```text
+/priogrid:doctor
+/priogrid:sync
+/priogrid:sync-all
+/priogrid:review
+/priogrid:list-projects
+/priogrid:today
+/priogrid:propose-week
+/priogrid:print-week
+/priogrid:set-project-status
+/priogrid:add-project
+/priogrid:add-chunk
+/priogrid:schedule-chunk
+/priogrid:export-todoist
+/priogrid:migrate
+```
+
+Those slash-command skills call the same bundled script commands:
+
 ```bash
 node plugins/priogrid/scripts/priogrid.mjs doctor
 node plugins/priogrid/scripts/priogrid.mjs sync
