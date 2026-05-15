@@ -1,0 +1,40 @@
+{
+  "name": "priogrid",
+  "version": "0.1.0",
+  "description": "Chat-driven weekly planning for Todoist, packaged as a Codex plugin.",
+  "author": {
+    "name": "Kia Armani",
+    "email": "kia@kia.dev",
+    "url": "https://kia.dev"
+  },
+  "homepage": "https://github.com/KiaArmani/codex-marketplace",
+  "repository": "https://github.com/KiaArmani/codex-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "todoist",
+    "planning",
+    "weekly-planning",
+    "productivity"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "priogrid",
+    "shortDescription": "Plan the week through Codex using Todoist as the backend",
+    "longDescription": "priogrid is a Codex-first weekly planning layer for Todoist. It keeps Todoist canonical, stores planning metadata in a dedicated Todoist project, and lets the agent review priorities, choose active work, create chunks, schedule tasks, and sync changes without a web UI.",
+    "developerName": "Kia Armani",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/KiaArmani/codex-marketplace",
+    "privacyPolicyURL": "https://github.com/KiaArmani/codex-marketplace",
+    "termsOfServiceURL": "https://github.com/KiaArmani/codex-marketplace",
+    "defaultPrompt": [
+      "Review my current priorities using priogrid.",
+      "Plan my week with 6 hours."
+    ],
+    "brandColor": "#2563EB",
+    "screenshots": []
+  }
+}

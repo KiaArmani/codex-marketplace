@@ -1,0 +1,20 @@
+{
+  "name": "kia",
+  "interface": {
+    "displayName": "Kia Armani"
+  },
+  "plugins": [
+    {
+      "name": "priogrid",
+      "source": {
+        "source": "local",
+        "path": "./plugins/priogrid"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
