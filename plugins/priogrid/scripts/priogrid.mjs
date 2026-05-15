@@ -2,6 +2,7 @@
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const CACHE_VERSION = 1;
 const METADATA_PROJECT_NAME = "priogrid";
@@ -1001,7 +1002,25 @@ Commands:
   migrate --from /path/to/planner-store.json`);
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+export function isCliEntrypoint(metaUrl = import.meta.url, argvPath = process.argv[1], platform = process.platform) {
+  if (!argvPath) {
+    return false;
+  }
+
+  const pathApi = platform === "win32" ? path.win32 : path;
+  const rawModulePath = fileURLToPath(metaUrl);
+  const moduleFilePath = platform === "win32"
+    ? rawModulePath.replace(/^\/([A-Za-z]:[\\/])/, "$1")
+    : rawModulePath;
+  const modulePath = pathApi.resolve(moduleFilePath);
+  const invokedPath = pathApi.resolve(argvPath);
+
+  return platform === "win32"
+    ? modulePath.toLowerCase() === invokedPath.toLowerCase()
+    : modulePath === invokedPath;
+}
+
+if (isCliEntrypoint()) {
   main().catch((error) => {
     console.error(error instanceof Error ? error.message : String(error));
     process.exitCode = 1;
