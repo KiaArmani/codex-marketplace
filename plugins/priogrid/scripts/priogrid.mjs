@@ -594,12 +594,12 @@ function serializeProjectMetadata(project) {
 
 function serializeChunkDescription(chunk, project) {
   return [
+    `Planner project: ${project.name}`,
+    `Done: ${chunk.clear_done_state}`,
     markerBlock(CHUNK_MARKER, {
       priogrid_chunk_id: chunk.id,
       priogrid_project_id: project.id
-    }),
-    `Planner project: ${project.name}`,
-    `Done when: ${chunk.clear_done_state}`
+    })
   ].join("\n");
 }
 
@@ -769,8 +769,8 @@ function defaultProjectMetadata(project) {
 }
 
 function clearDoneState(task) {
-  const line = (task.description ?? "").split(/\r?\n/).find((candidate) => /^done when\s*:/i.test(candidate.trim()));
-  return line ? line.replace(/^done when\s*:\s*/i, "").trim() : "The task is complete and the next action is obvious or no longer needed.";
+  const line = (task.description ?? "").split(/\r?\n/).find((candidate) => /^done(?: when)?\s*:/i.test(candidate.trim()));
+  return line ? line.replace(/^done(?: when)?\s*:\s*/i, "").trim() : "The task is complete and the next action is obvious or no longer needed.";
 }
 
 function inferEnergyType(task, fallback) {
