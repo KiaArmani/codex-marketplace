@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diataxis"
+  short_description: "Write and review docs with Diataxis"
+  default_prompt: "Use $diataxis to classify and improve this documentation."

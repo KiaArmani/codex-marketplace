@@ -5,6 +5,7 @@ My personal Codex plugin marketplace
 ## Plugins
 
 - `priogrid`: Todoist-backed weekly planning through Codex chat.
+- `diataxis`: Write, review, classify, restructure, and improve technical documentation using the Diataxis framework.
 
 ## Register Marketplace
 
@@ -21,6 +22,17 @@ Install the priogrid plugin from the personal marketplace:
 
 ```bash
 codex plugin install priogrid@kia
+codex plugin list
+```
+
+Restart Codex if a running session has already loaded its plugin list.
+
+## Install diataxis
+
+Install the Diataxis plugin from the personal marketplace:
+
+```bash
+codex plugin install diataxis@kia
 codex plugin list
 ```
 

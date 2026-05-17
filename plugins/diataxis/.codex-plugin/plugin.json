@@ -1,0 +1,42 @@
+{
+  "name": "diataxis",
+  "version": "0.1.0",
+  "description": "Write, review, classify, restructure, and improve technical documentation using the Diataxis framework.",
+  "author": {
+    "name": "Kia Armani",
+    "email": "kia@kia.dev",
+    "url": "https://kia.dev"
+  },
+  "homepage": "https://github.com/KiaArmani/codex-marketplace",
+  "repository": "https://github.com/KiaArmani/codex-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "diataxis",
+    "documentation",
+    "technical-writing",
+    "docs",
+    "review"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Diataxis",
+    "shortDescription": "Write and review docs with the Diataxis framework",
+    "longDescription": "Diataxis helps Codex classify, review, restructure, and improve documentation by separating tutorials, how-to guides, reference, and explanation according to the reader need each page serves.",
+    "developerName": "Kia Armani",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/KiaArmani/codex-marketplace",
+    "privacyPolicyURL": "https://github.com/KiaArmani/codex-marketplace",
+    "termsOfServiceURL": "https://github.com/KiaArmani/codex-marketplace",
+    "defaultPrompt": [
+      "Use Diataxis to review these docs.",
+      "Classify these pages by documentation mode.",
+      "Restructure this documentation set."
+    ],
+    "brandColor": "#0F766E",
+    "screenshots": []
+  }
+}
