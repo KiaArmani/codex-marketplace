@@ -1,0 +1,4 @@
+interface:
+  display_name: "Repository Agents Guide"
+  short_description: "Create concise AGENTS.md repo guides"
+  default_prompt: "Use $repository-agents-guide to create or refresh AGENTS.md for this repository."

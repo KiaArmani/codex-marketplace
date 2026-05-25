@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Restic Backup"
+  short_description: "Set up Codex chat backups with Restic"
+  default_prompt: "Use $codex-restic-backup to set up or validate Codex chat backups on this machine."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Workflow Packaging Audit"
+  short_description: "Find repeated work worth packaging"
+  default_prompt: "Use $workflow-packaging-audit to review recent work and package high-confidence reusable workflows."

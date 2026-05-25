@@ -6,6 +6,7 @@ My personal Codex plugin marketplace
 
 - `priogrid`: Todoist-backed weekly planning through Codex chat.
 - `diataxis`: Write, review, classify, restructure, and improve technical documentation using the Diataxis framework.
+- `workflow-utils`: Reusable Codex workflow utilities for backups, workflow packaging audits, and repository AGENTS.md guides.
 
 ## Register Marketplace
 
@@ -33,6 +34,17 @@ Install the Diataxis plugin from the personal marketplace:
 
 ```bash
 codex plugin install diataxis@kia
+codex plugin list
+```
+
+Restart Codex if a running session has already loaded its plugin list.
+
+## Install workflow-utils
+
+Install the Workflow Utils plugin from the personal marketplace:
+
+```bash
+codex plugin install workflow-utils@kia
 codex plugin list
 ```
 

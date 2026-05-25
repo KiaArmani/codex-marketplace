@@ -1,0 +1,42 @@
+{
+  "name": "workflow-utils",
+  "version": "0.1.0",
+  "description": "Utility workflow skills for Codex backups, workflow packaging audits, and repository AGENTS.md guides.",
+  "author": {
+    "name": "Kia Armani",
+    "email": "kia@kia.dev",
+    "url": "https://kia.dev"
+  },
+  "homepage": "https://github.com/KiaArmani/codex-marketplace",
+  "repository": "https://github.com/KiaArmani/codex-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "workflow",
+    "backup",
+    "restic",
+    "agents"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Workflow Utils",
+    "shortDescription": "Reusable Codex workflow utilities",
+    "longDescription": "Workflow Utils packages reusable Codex workflows for cross-device chat backups, finding repeated work worth turning into skills or automations, and creating repository-specific AGENTS.md contributor guides.",
+    "developerName": "Kia Armani",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/KiaArmani/codex-marketplace",
+    "privacyPolicyURL": "https://github.com/KiaArmani/codex-marketplace",
+    "termsOfServiceURL": "https://github.com/KiaArmani/codex-marketplace",
+    "defaultPrompt": [
+      "Set up Codex chat backups with Restic.",
+      "Review my recent work for reusable workflow candidates.",
+      "Create an AGENTS.md guide for this repository."
+    ],
+    "brandColor": "#334155",
+    "screenshots": []
+  }
+}
