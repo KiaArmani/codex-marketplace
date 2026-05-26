@@ -1,7 +1,7 @@
 {
   "name": "honcho",
-  "version": "0.1.0",
-  "description": "Codex plugin for Honcho memory tools, SDK integration guidance, CLI debugging, and SDK migrations.",
+  "version": "0.1.1",
+  "description": "Codex plugin for Honcho automatic chat memory capture, memory tools, SDK integration guidance, CLI debugging, and SDK migrations.",
   "author": {
     "name": "Plastic Labs",
     "url": "https://honcho.dev"
@@ -21,7 +21,7 @@
   "interface": {
     "displayName": "Honcho",
     "shortDescription": "Build and debug AI agents with Honcho memory",
-    "longDescription": "Honcho for Codex bundles persistent-memory MCP setup, integration workflows for Python and TypeScript applications, CLI debugging guidance, and SDK migration playbooks for Honcho v3-era projects. It supports the hosted Honcho service and self-hosted Honcho deployments that authenticate with an API key or JWT auth token.",
+    "longDescription": "Honcho for Codex bundles automatic chat memory capture hooks, persistent-memory MCP setup, integration workflows for Python and TypeScript applications, CLI debugging guidance, and SDK migration playbooks for Honcho v3-era projects. It supports the hosted Honcho service and self-hosted Honcho deployments that authenticate with an API key or JWT auth token.",
     "developerName": "Plastic Labs",
     "category": "Coding",
     "capabilities": [

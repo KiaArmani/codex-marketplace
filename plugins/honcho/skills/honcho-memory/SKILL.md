@@ -35,6 +35,29 @@ export HONCHO_WORKSPACE_ID="codex"
 export HONCHO_ASSISTANT_NAME="Codex"
 ```
 
+## Automatic Codex Capture
+
+The plugin bundles Codex lifecycle hooks in `hooks/hooks.json`. When installed as trusted or managed hooks, they automatically:
+
+1. Store each user prompt on `UserPromptSubmit`.
+2. Store the latest assistant reply on `Stop` when the token can create/use a separate assistant peer.
+3. Add the user and assistant to one Honcho session per Codex session.
+4. Return concise relevant Honcho context for the current prompt when available.
+
+For self-hosted Codex memory capture, prefer these variables:
+
+```bash
+export HONCHO_CODEX="your-self-hosted-admin-or-scoped-jwt"
+export HONCHO_CODEX_URL="https://honcho.llm.kia.dev"
+export HONCHO_USER_NAME="codex"
+export HONCHO_ASSISTANT_NAME="codex"
+export HONCHO_WORKSPACE_ID="kia-agenticcoding-dev"
+```
+
+`HONCHO_CODEX_URL` is used by the direct API hook. `HONCHO_MCP_URL` or `HONCHO_CODEX_MCP_URL` is still required only when using the MCP bridge against a self-hosted MCP Worker.
+
+Codex currently requires active global hooks from a trusted config source. For a managed machine-wide setup, place the hook commands in `C:\ProgramData\OpenAI\Codex\config.toml` so Codex reports them as managed system hooks; the bundled `hooks/hooks.json` is included for plugin-hook capable Codex builds. If `HONCHO_USER_NAME` and `HONCHO_ASSISTANT_NAME` resolve to the same peer, the hook enters scoped single-peer mode: user prompts are captured, assistant replies are skipped so Codex output is not modeled as the observed user peer, and context lookup uses the peer representation endpoint.
+
 ## Standard Flow
 
 For a new conversation:

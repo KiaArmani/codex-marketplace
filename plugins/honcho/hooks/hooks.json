@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$PLUGIN_ROOT/scripts/honcho-codex-hook.mjs\"",
+            "commandWindows": "node --input-type=module -e \"import('node:url').then(({pathToFileURL})=>{const root=process.env.PLUGIN_ROOT||process.cwd();return import(pathToFileURL(root + '/scripts/honcho-codex-hook.mjs').href)})\"",
+            "statusMessage": "Capturing user message in Honcho"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$PLUGIN_ROOT/scripts/honcho-codex-hook.mjs\"",
+            "commandWindows": "node --input-type=module -e \"import('node:url').then(({pathToFileURL})=>{const root=process.env.PLUGIN_ROOT||process.cwd();return import(pathToFileURL(root + '/scripts/honcho-codex-hook.mjs').href)})\"",
+            "statusMessage": "Capturing assistant message in Honcho"
+          }
+        ]
+      }
+    ]
+  }
+}

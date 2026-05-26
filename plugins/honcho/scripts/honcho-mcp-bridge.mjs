@@ -19,20 +19,20 @@ function authHeader() {
     return explicit.startsWith("Bearer ") ? explicit : `Bearer ${explicit}`;
   }
 
-  const token = firstEnv("HONCHO_API_KEY", "HONCHO_AUTH_TOKEN", "HONCHO_TOKEN");
+  const token = firstEnv("HONCHO_CODEX", "HONCHO_API_KEY", "HONCHO_AUTH_TOKEN", "HONCHO_TOKEN");
   if (token) {
     return `Bearer ${token}`;
   }
 
   console.error(
-    "Honcho MCP needs HONCHO_API_KEY or HONCHO_AUTH_TOKEN. " +
-      "For self-hosted auth, use the admin/scoped JWT token as HONCHO_AUTH_TOKEN.",
+    "Honcho MCP needs HONCHO_CODEX, HONCHO_API_KEY, or HONCHO_AUTH_TOKEN. " +
+      "For self-hosted auth, use the admin/scoped JWT token as HONCHO_CODEX or HONCHO_AUTH_TOKEN.",
   );
   process.exit(1);
 }
 
 function serverUrl() {
-  const mcpUrl = firstEnv("HONCHO_MCP_URL", "HONCHO_MCP_SERVER_URL");
+  const mcpUrl = firstEnv("HONCHO_CODEX_MCP_URL", "HONCHO_MCP_URL", "HONCHO_MCP_SERVER_URL");
   if (mcpUrl) {
     return mcpUrl;
   }
