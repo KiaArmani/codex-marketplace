@@ -1,0 +1,6 @@
+interface:
+  display_name: "Honcho Integration"
+  short_description: "Add Honcho SDK memory to an app"
+  default_prompt: "Use $honcho-integration to integrate Honcho into this application."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Honcho CLI"
+  short_description: "Inspect and debug Honcho deployments"
+  default_prompt: "Use $honcho-cli to inspect this Honcho deployment."
+policy:
+  allow_implicit_invocation: true

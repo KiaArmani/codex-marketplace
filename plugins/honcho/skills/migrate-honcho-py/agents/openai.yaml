@@ -1,0 +1,6 @@
+interface:
+  display_name: "Migrate Honcho Python"
+  short_description: "Upgrade Python SDK code to current Honcho"
+  default_prompt: "Use $migrate-honcho-py to migrate this Python Honcho SDK code."
+policy:
+  allow_implicit_invocation: true

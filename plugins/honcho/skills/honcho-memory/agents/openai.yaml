@@ -1,0 +1,11 @@
+interface:
+  display_name: "Honcho Memory"
+  short_description: "Use hosted or self-hosted Honcho memory"
+  default_prompt: "Use $honcho-memory to remember and recall context in this Codex session."
+policy:
+  allow_implicit_invocation: true
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "honcho"
+      description: "Honcho MCP server"

@@ -1,0 +1,44 @@
+{
+  "name": "honcho",
+  "version": "0.1.0",
+  "description": "Codex plugin for Honcho memory tools, SDK integration guidance, CLI debugging, and SDK migrations.",
+  "author": {
+    "name": "Plastic Labs",
+    "url": "https://honcho.dev"
+  },
+  "homepage": "https://honcho.dev/docs/v3/documentation/introduction/vibecoding",
+  "repository": "https://github.com/plastic-labs/honcho",
+  "license": "AGPL-3.0",
+  "keywords": [
+    "honcho",
+    "memory",
+    "agents",
+    "mcp",
+    "sdk",
+    "personalization"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Honcho",
+    "shortDescription": "Build and debug AI agents with Honcho memory",
+    "longDescription": "Honcho for Codex bundles persistent-memory MCP setup, integration workflows for Python and TypeScript applications, CLI debugging guidance, and SDK migration playbooks for Honcho v3-era projects. It supports the hosted Honcho service and self-hosted Honcho deployments that authenticate with an API key or JWT auth token.",
+    "developerName": "Plastic Labs",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://honcho.dev",
+    "privacyPolicyURL": "https://honcho.dev/privacy",
+    "termsOfServiceURL": "https://honcho.dev/terms",
+    "defaultPrompt": [
+      "Use Honcho memory in this Codex session.",
+      "Integrate Honcho into this app.",
+      "Debug this Honcho deployment."
+    ],
+    "brandColor": "#111827",
+    "screenshots": []
+  },
+  "mcpServers": "./.mcp.json"
+}

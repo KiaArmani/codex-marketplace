@@ -1,0 +1,6 @@
+interface:
+  display_name: "Migrate Honcho TypeScript"
+  short_description: "Upgrade TypeScript SDK code to current Honcho"
+  default_prompt: "Use $migrate-honcho-ts to migrate this TypeScript Honcho SDK code."
+policy:
+  allow_implicit_invocation: true

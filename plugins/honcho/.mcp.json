@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "honcho": {
+      "command": "node",
+      "args": [
+        "./scripts/honcho-mcp-bridge.mjs"
+      ]
+    }
+  }
+}
