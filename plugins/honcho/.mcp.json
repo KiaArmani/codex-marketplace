@@ -3,7 +3,9 @@
     "honcho": {
       "command": "node",
       "args": [
-        "./scripts/honcho-mcp-bridge.mjs"
+        "--input-type=module",
+        "-e",
+        "import { existsSync, readdirSync, statSync } from 'node:fs'; import { homedir } from 'node:os'; import { join, resolve } from 'node:path'; import { pathToFileURL } from 'node:url'; const cwd = process.cwd(); const roots = [process.env.PLUGIN_ROOT, process.env.CODEX_PLUGIN_ROOT, cwd, join(cwd, 'plugins', 'honcho')].filter(Boolean); const cacheRoot = join(process.env.CODEX_HOME || join(homedir(), '.codex'), 'plugins', 'cache', 'kia', 'honcho'); try { roots.push(...readdirSync(cacheRoot, { withFileTypes: true }).filter((entry) => entry.isDirectory()).map((entry) => join(cacheRoot, entry.name)).sort((a, b) => statSync(b).mtimeMs - statSync(a).mtimeMs)); } catch {} const bridge = roots.map((root) => join(resolve(root), 'scripts', 'honcho-mcp-bridge.mjs')).find(existsSync); if (!bridge) { console.error('Honcho MCP bridge not found. Set PLUGIN_ROOT or launch the MCP server from the Honcho plugin root.'); process.exit(1); } await import(pathToFileURL(bridge).href);"
       ]
     }
   }

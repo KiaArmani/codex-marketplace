@@ -1,6 +1,6 @@
 {
   "name": "honcho",
-  "version": "0.1.1",
+  "version": "0.1.1+codex.20260527143555",
   "description": "Codex plugin for Honcho automatic chat memory capture, memory tools, SDK integration guidance, CLI debugging, and SDK migrations.",
   "author": {
     "name": "Plastic Labs",

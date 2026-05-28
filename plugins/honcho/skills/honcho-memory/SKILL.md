@@ -10,6 +10,12 @@ Use the Honcho MCP tools when they are available. If they are not in the active 
 ## Setup
 
 The bundled MCP bridge starts `mcp-remote` for Codex stdio transport.
+The plugin MCP manifest loads the bridge from `PLUGIN_ROOT` or `CODEX_PLUGIN_ROOT`
+when Codex provides one, then falls back to the plugin working directory and the
+installed `honcho@kia` plugin cache.
+If Codex does not pass these values in the MCP process environment, the bridge
+also reads string entries from `[shell_environment_policy.set]` in
+`~/.codex/config.toml`.
 
 Required environment:
 
