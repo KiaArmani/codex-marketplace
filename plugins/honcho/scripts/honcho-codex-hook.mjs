@@ -508,7 +508,10 @@ async function runSelfTest() {
   await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
   const address = server.address();
   env.HONCHO_CODEX = "self-test-token";
-  env.HONCHO_BASE_URL = `http://127.0.0.1:${address.port}`;
+  env.HONCHO_CODEX_URL = `http://127.0.0.1:${address.port}`;
+  env.HONCHO_API_URL = "";
+  env.HONCHO_BASE_URL = "";
+  env.HONCHO_URL = "";
   env.HONCHO_WORKSPACE_ID = "codex";
   env.HONCHO_USER_NAME = "SelfTestUser";
   env.HONCHO_ASSISTANT_NAME = "Codex";

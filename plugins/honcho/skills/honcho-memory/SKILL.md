@@ -16,6 +16,9 @@ installed `honcho@kia` plugin cache.
 If Codex does not pass these values in the MCP process environment, the bridge
 also reads string entries from `[shell_environment_policy.set]` in
 `~/.codex/config.toml`.
+The plugin's `.mcp.json` should be enough for Codex to register the MCP server;
+do not add a separate `[mcp_servers.honcho]` entry unless you are debugging
+Codex itself.
 
 Required environment:
 
@@ -33,6 +36,20 @@ export HONCHO_USER_NAME="YourName"
 ```
 
 `HONCHO_API_KEY` and `HONCHO_AUTH_TOKEN` are both sent as `Authorization: Bearer ...`. For direct SDK/CLI use against a self-hosted API, set `HONCHO_URL` or `HONCHO_BASE_URL`; for MCP use, set `HONCHO_MCP_URL` to the MCP server/Worker URL, not the raw Honcho API URL.
+If a raw API URL is set without `HONCHO_MCP_URL`, the bridge exits instead of
+falling back to the hosted MCP server.
+
+Local Wrangler MCP development:
+
+```bash
+node scripts/honcho-local-mcp-dev.mjs --mcp-dir /path/to/honcho/mcp --api-url http://127.0.0.1:8000 --port 8787
+```
+
+Run this from the installed Honcho plugin folder. The launcher writes
+`HONCHO_API_URL` to `<honcho>/mcp/.dev.vars` before starting Wrangler, because
+Wrangler only exposes `.dev.vars` and configured bindings as Worker `env`.
+Wrangler logs should mention `.dev.vars` and show `env.HONCHO_API_URL` as a
+local environment variable.
 
 Optional environment:
 

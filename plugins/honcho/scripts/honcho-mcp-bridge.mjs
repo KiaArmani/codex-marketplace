@@ -57,7 +57,7 @@ function readCodexShellEnvironment() {
   return result;
 }
 
-const env = { ...process.env, ...readCodexShellEnvironment() };
+const env = { ...readCodexShellEnvironment(), ...process.env };
 
 function firstEnv(...names) {
   for (const name of names) {
@@ -113,12 +113,14 @@ if (!userName) {
   process.exit(1);
 }
 
+const resolvedServerUrl = serverUrl();
+const resolvedAuthHeader = authHeader();
 const args = [
   "-y",
   "mcp-remote",
-  serverUrl(),
+  resolvedServerUrl,
   "--header",
-  `Authorization:${authHeader()}`,
+  `Authorization:${resolvedAuthHeader}`,
   "--header",
   `X-Honcho-User-Name:${userName}`,
 ];
@@ -129,6 +131,15 @@ args.push("--header", `X-Honcho-Assistant-Name:${assistantName}`);
 const workspaceId = firstEnv("HONCHO_WORKSPACE_ID", "HONCHO_WORKSPACE");
 if (workspaceId) {
   args.push("--header", `X-Honcho-Workspace-ID:${workspaceId}`);
+}
+
+function redactedLaunchArgs(inputArgs) {
+  return inputArgs.map((arg) => {
+    if (arg.startsWith("Authorization:")) {
+      return "Authorization:[redacted]";
+    }
+    return arg;
+  });
 }
 
 function pathCandidates(command) {
@@ -195,6 +206,27 @@ try {
 } catch (error) {
   console.error(`Failed to prepare Honcho MCP bridge: ${error.message}`);
   process.exit(1);
+}
+
+if (process.argv.includes("--dry-run") || env.HONCHO_MCP_BRIDGE_DRY_RUN === "1") {
+  process.stdout.write(
+    `${JSON.stringify(
+      {
+        serverUrl: resolvedServerUrl,
+        command: launch.command,
+        args: redactedLaunchArgs(launch.args),
+        headers: {
+          Authorization: "present",
+          "X-Honcho-User-Name": userName,
+          "X-Honcho-Assistant-Name": assistantName,
+          ...(workspaceId ? { "X-Honcho-Workspace-ID": workspaceId } : {}),
+        },
+      },
+      null,
+      2,
+    )}\n`,
+  );
+  process.exit(0);
 }
 
 let child;

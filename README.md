@@ -93,6 +93,14 @@ The Honcho plugin bundles Codex `UserPromptSubmit` and `Stop` hooks in `hooks/ho
 
 For direct SDK or CLI calls against a self-hosted API, use `HONCHO_URL` or `HONCHO_BASE_URL`. For the automatic Codex hook, prefer `HONCHO_CODEX_URL` so direct API configuration does not collide with MCP setup. For Codex MCP, `HONCHO_MCP_URL` or `HONCHO_CODEX_MCP_URL` must point at the MCP server or Worker, not the raw Honcho API URL.
 
+The Honcho plugin registers its MCP server through `plugins/honcho/.mcp.json`; users should not need to add `[mcp_servers.honcho]` to `~/.codex/config.toml`. For local Wrangler MCP development, run the plugin-provided launcher from the installed plugin folder so `HONCHO_API_URL` is written to the Worker's `.dev.vars` binding file:
+
+```bash
+node scripts/honcho-local-mcp-dev.mjs --mcp-dir /path/to/honcho/mcp --api-url http://127.0.0.1:8000 --port 8787
+```
+
+Run `node scripts/honcho-plugin-self-test.mjs` from `plugins/honcho` to verify the plugin MCP metadata, bridge URL selection, and local `.dev.vars` generation.
+
 ## Configure priogrid
 
 priogrid requires a Todoist API token:

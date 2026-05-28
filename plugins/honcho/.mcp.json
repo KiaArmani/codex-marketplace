@@ -2,6 +2,7 @@
   "mcpServers": {
     "honcho": {
       "command": "node",
+      "startup_timeout_sec": 60,
       "args": [
         "--input-type=module",
         "-e",
